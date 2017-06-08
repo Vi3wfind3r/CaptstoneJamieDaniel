@@ -40,7 +40,7 @@ function setStoryIds(state, storyType, imageIds) {
   state[storyType].allIds = imageIds;
 }
 
-function incStoryCurrentImage(state, storyType) { 
+function storyCurrentImage(state, storyType) { 
   if(state[storyType].current === state[storyType].allIds.length - 1) {
     state[storyType].current = 0;
   }
@@ -85,7 +85,7 @@ function listenForText() {
 
 function cycleGifs(buttonID, storyType) {
   $('.results').on('click', buttonID, function() {
-    incStoryCurrentImage(appState, storyType);
+    storyCurrentImage(appState, storyType);
     render(appState);
   });
 }
