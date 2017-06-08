@@ -37,6 +37,8 @@ function getDataFromApi(searchTerm, storyType, callback) {
 }
 
 function setStoryIds(state, storyType, imageIds) { 
+  state[storyType].allIds = imageIds;
+}
 
 function incStoryCurrentImage(state, storyType) { 
   if(state[storyType].current === state[storyType].allIds.length - 1) {
